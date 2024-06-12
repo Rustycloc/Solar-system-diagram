@@ -25,7 +25,7 @@ jobs:
       run: |
         pip install pygame==2.5.2
     - name: Build executable
-      run: pyInstaller solar-system-diagram.py --onefile --windowed
+      run: pyinstaller solar-system-diagram.py --onefile --windowed
 
     - name: Create Release
       id: create_release
