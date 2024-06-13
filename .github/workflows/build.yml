@@ -23,6 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        pip install pyinstaller
         pip install pygame==2.5.2
     - name: Build executable
       run: pyinstaller solar-system-diagram.py --onefile --windowed
