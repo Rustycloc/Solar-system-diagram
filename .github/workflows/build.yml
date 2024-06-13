@@ -48,6 +48,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/solar-system-diagram.py.exe
-        asset_name: solar-system-diagram.py.exe
+        asset_path: ./dist/solar-system-diagram.exe
+        asset_name: solar-system-diagram.exe
         asset_content_type: application/octet-stream
