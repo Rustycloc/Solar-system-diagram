@@ -1,9 +1,28 @@
 import pygame
 import sys
+import random
+i=0
+
+class make_circle():
+    def __init__(self) -> None:
+        x = str(random.randint(1350, 1400))
+        y = str(random.randint(0,1000))
+        circle = pygame.draw.circle(screen, kuiper_grey, (int(x),int(y)), 1)
+
+
+
+
+
+
+
+
+
+
 blue = (0, 0, 200)
 orange = (255,165,0)
 yellow = (255,255,0)
 grey = (90, 90, 90)
+kuiper_grey = (91, 91, 91)
 pale = (212, 178, 141)
 cyan = (2, 245, 249)
 blues = (6, 2, 249)
@@ -15,18 +34,21 @@ drk_grey = (131, 131, 131)
 #bum ass code lmao
 screen = pygame.display.set_mode((1500, 1000))
 pygame.display.set_caption('Solar System, Rustycloc, 6/13/2024')
-earth = pygame.draw.circle(screen, blue, (237.5,500), 22.7861230329)
-mars = pygame.draw.circle(screen,orange,(300,500), 12.1494992847)
-venus = pygame.draw.circle(screen, yellow, (175,500), 21.6452074392)
-mercury = pygame.draw.circle(screen,grey,(125,500),8.72496423462)
-jupiter = pygame.draw.circle(screen, pale, (600,500), 255.693848355)
-Uranus = pygame.draw.circle(screen, cyan, (1000, 500), 91.4127324749)
-neptune = pygame.draw.circle(screen, blues, (1250,500), 88.5193133047)
-pluto = pygame.draw.circle(screen, blue_grey, (1375, 500), 4.23819742489)
-ceres = pygame.draw.circle(screen, pale_grey,(325, 500), 1)
-haumea = pygame.draw.circle(screen, red_grey,(1125, 500), 3.11158798283)
-makemake = pygame.draw.circle(screen, crimson, (1400, 500), 2.55722460658)
-eris = pygame.draw.circle(screen, drk_grey, (1450, 500),4.18097281831)
+earth = pygame.draw.circle(screen, blue, (137.5,500), 22.7861230329)
+mars = pygame.draw.circle(screen,orange,(200,500), 12.1494992847)
+venus = pygame.draw.circle(screen, yellow, (75,500), 21.6452074392)
+mercury = pygame.draw.circle(screen,grey,(25,500),8.72496423462)
+jupiter = pygame.draw.circle(screen, pale, (500,500), 255.693848355)
+while i < 2500:
+    make_circle()
+    i += 1
+Uranus = pygame.draw.circle(screen, cyan, (900, 500), 91.4127324749)
+neptune = pygame.draw.circle(screen, blues, (1150,500), 88.5193133047)
+pluto = pygame.draw.circle(screen, blue_grey, (1300, 500), 4.23819742489)
+ceres = pygame.draw.circle(screen, pale_grey,(225, 500), 1)
+haumea = pygame.draw.circle(screen, red_grey,(1025, 500), 3.11158798283)
+makemake = pygame.draw.circle(screen, crimson, (1325, 500), 2.55722460658)
+eris = pygame.draw.circle(screen, drk_grey, (1425, 500),4.18097281831)
 pygame.init()
 pygame.font.init()
 myfont = pygame.font.SysFont("arial", 30)
@@ -39,8 +61,8 @@ while True:
          pygame.quit()
          sys.exit(1)
 
-    pygame.display.update()                 
-
+    pygame.display.update()     
+    print(mos_x, mos_y)          
 
     
     #earth
@@ -137,3 +159,15 @@ while True:
     #end of eris
 
 
+    if color == kuiper_grey:
+        pygame.draw.rect(screen, (0,0,0),(0,0,1000,100))
+        spacetext = myfont.render("Astroid, Kuiper belt", 0, (100, 100, 100))
+        screen.blit(spacetext, (0,0))
+        pygame.display.update()
+
+
+
+
+
+
+   
