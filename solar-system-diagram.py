@@ -36,7 +36,8 @@ drk_grey = (131, 131, 131)
 while i < 2500:
     make_circle()
     i += 1
-    
+
+screen = pygame.display.set_mode((1500, 1000))
 pygame.display.set_icon(pygame.image.load(resource_path("solarsystem.png")))
 pygame.display.set_caption('Solar System, Rustycloc, 6/13/2024')
 earth = pygame.draw.circle(screen, blue, (137.5,500), 22.7861230329)
