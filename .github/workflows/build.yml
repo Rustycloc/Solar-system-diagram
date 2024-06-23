@@ -26,7 +26,7 @@ jobs:
         pip install pyinstaller
         pip install pygame==2.5.2
     - name: Build executable
-      run: pyinstaller --onefile --windowed -add-data="solarsystem.png;." solar-system-diagram.py
+      run: pyinstaller --onefile --windowed --add-data="solarsystem.png;." solar-system-diagram.py
 
     - name: Create Release
       id: create_release
